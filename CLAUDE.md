@@ -50,8 +50,7 @@ never in the repo. The page asks for it once per phone and keeps it in localStor
 Tables: `rota_settings` (names, code hash), `rota_ticks` (key → by 0/1, at), `rota_custom` (one-off jobs).
 Functions: `rota_state`, `rota_tick`, `rota_names`, `rota_custom_save`, `rota_custom_delete`.
 
-`supabase/01-setup.sql` was run on 5 Nov 2026. `supabase/02-one-off-jobs.sql` was sent on 8 Nov.
-Ask Jimmy whether he has run it if adding a one-off job errors. To change the flat code:
+`supabase/01-setup.sql` was run on 5 Nov 2026 and `supabase/02-one-off-jobs.sql` on 8 Nov. To change the flat code:
 `update public.rota_settings set code_hash = extensions.crypt('NEWCODE', extensions.gen_salt('bf')) where id = 1;`
 
 ### Keys stored in `rota_ticks` (no schema change needed for these)

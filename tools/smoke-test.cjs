@@ -14,7 +14,7 @@ const { chromium } = require('playwright');
   await A.getByPlaceholder('Flat code').fill('x'); await A.getByText('Open the rota').click(); await A.waitForTimeout(800);
   await A.getByText("I'm Jimmy").click();
   // tick: sheet should appear at the bottom of the viewport
-  await A.getByLabel('Tick Hoover & mop hallway').click(); await A.waitForTimeout(500);
+  await A.getByLabel('Tick Hoover hallway').click(); await A.waitForTimeout(500);
   const sheet = A.locator('div.fixed.bottom-0');
   console.log('sheet visible:', await sheet.isVisible());
   await A.screenshot({path:'/tmp/sheet.png'});
